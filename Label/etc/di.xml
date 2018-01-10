@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="MylabelGirdFilterPool" type="Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool">
+        <arguments>
+            <argument name="appliers" xsi:type="array">
+                <item name="regular" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter
+                </item>
+                <item name="fulltext" xsi:type="object">
+                    Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MylabelGridDataProvider"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">
+                MyModule\Label\Model\Resource\Label\Collection
+            </argument>
+            <argument name="filterPool" xsi:type="object" shared="false">
+                MylabelGirdFilterPool
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MyModule\Label\Model\ResourceModel\Label\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mymodule_label</argument>
+            <argument name="eventPrefix" xsi:type="string">mymodule_label_label_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">label_grid_collection</argument>
+            <argument name="resourceModel" xsi:type="string">
+                MyModule\Label\Model\ResourceModel\Label
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mylabel_grid_listing_data_source" xsi:type="string">
+                    MyModule\Label\Model\ResourceModel\Label\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Magento\Swatches\Block\Product\Renderer\Configurable" type="MyModule\Label\Block\Product\Configurable" />
+    <preference for="Magento\Catalog\Block\Product\ImageBuilder" type="MyModule\Label\Block\Product\MyImageBuilder" />
+    <preference for="Magento\Catalog\Block\Product\Image" type="MyModule\Label\Block\Product\MyImage" />
+    <preference for="Magento\Checkout\Block\Cart\Sidebar" type="MyModule\Label\Block\Cart\Sidebar" />
+    <preference for="Magento\Catalog\Block\Product\View\Gallery" type="MyModule\Label\Block\Product\View\Gallery" />
+</config>

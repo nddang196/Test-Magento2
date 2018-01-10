@@ -1,0 +1,29 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php /** @var $block \MyModule\Label\Block\Product\MyImage */ ?>
+
+<div class="product-image-container"
+      style="width:<?= /* @escapeNotVerified */ $block->getWidth() ?>px; position:relative;">
+    <?php $productLabel = $block->getProductLabel() ?>
+    <?php if(!empty($productLabel)): ?>
+        <?php foreach ($productLabel as $value) :?>
+            <div class="mylabel mylabel-<?= $value['position'] ?>">
+                <div class="mylabel-text-<?= $value['position'] ?> mylabel-text">
+                    <?= htmlentities($value['title']) ?>
+                </div>
+            </div>
+        <?php endforeach ?>
+    <?php endif ?>
+    <div class="product-image-wrapper"
+          style="padding-bottom: <?= /* @escapeNotVerified */ ($block->getRatio() * 100) ?>%;">
+        <img class="product-image-photo"
+            <?= /* @escapeNotVerified */ $block->getCustomAttributes() ?>
+            src="<?= /* @escapeNotVerified */ $block->getImageUrl() ?>"
+            width="<?= /* @escapeNotVerified */ $block->getResizedImageWidth() ?>"
+            height="<?= /* @escapeNotVerified */ $block->getResizedImageHeight() ?>"
+            alt="<?= /* @escapeNotVerified */ $block->stripTags($block->getLabel(), null, true) ?>"/></div>
+</div>

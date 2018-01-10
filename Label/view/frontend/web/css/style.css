@@ -1,0 +1,84 @@
+.prd-link {
+    position : relative;
+}
+
+.mylabel {
+    position   : absolute;
+    height     : 71px;
+    width      : 71px;
+    overflow   : hidden;
+    color      : #fff;
+    text-align : center;
+    z-index    : 1000;
+}
+
+.mylabel-top-left {
+    left : -3px;
+    top  : -3px;
+}
+
+.mylabel-top-right {
+    right : -3px;
+    top   : -3px;
+}
+
+.mylabel-bottom-right {
+    right  : -3px;
+    bottom : 0;
+}
+
+.mylabel-bottom-left {
+    left   : -3px;
+    bottom : 0;
+}
+
+.mylabel-text {
+    color          : #fff;
+    text-align     : center;
+    position       : relative;
+    padding        : 4px 0;
+    width          : 80px;
+    text-transform : uppercase;
+    z-index        : 999;
+}
+
+.mylabel-text-top-left {
+    background-color  : #f90;
+    right             : 20.5px;
+    top               : 5px;
+    width             : 80px;
+    -webkit-transform : rotate(-45deg);
+    -moz-transform    : rotate(-45deg);
+    -ms-transform     : rotate(-45deg);
+    -o-transform      : rotate(-45deg);
+}
+
+.mylabel-text-top-right {
+    background-color  : #00acee;
+    left              : 11.5px;
+    top               : 5px;
+    -webkit-transform : rotate(45deg);
+    -moz-transform    : rotate(45deg);
+    -ms-transform     : rotate(45deg);
+    -o-transform      : rotate(45deg);
+}
+
+.mylabel-text-bottom-right {
+    background-color  : #0f0;
+    right             : -11.5px;
+    top               : 37px;
+    -webkit-transform : rotate(-45deg);
+    -moz-transform    : rotate(-45deg);
+    -ms-transform     : rotate(-45deg);
+    -o-transform      : rotate(-45deg);
+}
+
+.mylabel-text-bottom-left {
+    background-color  : #f09;
+    top               : 37px;
+    left              : -20px;
+    -webkit-transform : rotate(45deg);
+    -moz-transform    : rotate(45deg);
+    -ms-transform     : rotate(45deg);
+    -o-transform      : rotate(45deg);
+}
