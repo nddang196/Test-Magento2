@@ -25,6 +25,7 @@ class Products extends Extended
      * @var LabelFactory
      */
     protected $_labelFactoty;
+
     /**
      * @var  Registry
      */

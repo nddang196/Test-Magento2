@@ -1,0 +1,15 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="product-image-container"
+      data-bind="attr: {'style': 'height: ' + getHeight($parents[1]) + 'px; width: ' + getWidth($parents[1]) + 'px;' }">
+    <div class="product-image-wrapper">
+        <img data-bind="attr: {'src': getSrc($parents[1]), 'width': getWidth($parents[1]), 'height': getHeight($parents[1]), 'alt': getAlt($parents[1]) }"/>
+    </div>
+    <div data-bind="foreach:getLabel($parent[1])">
+        <div data-bind="text:title"></div>
+    </div>
+</div>

@@ -10,8 +10,17 @@ namespace MyModule\Label\Block;
 
 use Magento\Framework\View\Element\Template;
 
+/**
+ * Class ProductLabel
+ * @package MyModule\Label\Block
+ */
 class ProductLabel extends Template
 {
+    /**
+     * ProductLabel constructor.
+     * @param Template\Context $context
+     * @param array            $data
+     */
     public function __construct(Template\Context $context, array $data = [])
     {
         parent::__construct($context, $data);

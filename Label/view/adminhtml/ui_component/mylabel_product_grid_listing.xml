@@ -229,16 +229,6 @@
                 </filterDate>
             </filterRange>
         </filters>
-        <massaction name="listing_massaction">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">
-                        mylabel_product_grid_listing.mylabel_product_grid_listing.mylabel_product_grid_columns.ids
-                    </item>
-                    <item name="indexField" xsi:type="string">pid</item>
-                </item>
-            </argument>
-        </massaction>
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -288,16 +278,16 @@
                     <item name="namespace" xsi:type="string">current</item>
                 </item>
                 <item name="childDefaults" xsi:type="array">
-                    <!--<item name="fieldAction" xsi:type="array">-->
-                        <!--<item name="provider" xsi:type="string">-->
-                            <!--mylabel_product_grid_listing.mylabel_product_grid_listing.mylabel_product_grid_columns.actions-->
-                        <!--</item>-->
-                        <!--<item name="target" xsi:type="string">applyAction</item>-->
-                        <!--<item name="params" xsi:type="array">-->
-                            <!--<item name="0" xsi:type="string">edit</item>-->
-                            <!--<item name="1" xsi:type="string">${ $.$data.rowIndex }</item>-->
-                        <!--</item>-->
-                    <!--</item>-->
+                    <item name="fieldAction" xsi:type="array">
+                        <item name="provider" xsi:type="string">
+                            mylabel_product_grid_listing.mylabel_product_grid_listing.mylabel_product_grid_columns.actions
+                        </item>
+                        <item name="target" xsi:type="string">applyAction</item>
+                        <item name="params" xsi:type="array">
+                            <item name="0" xsi:type="string">edit</item>
+                            <item name="1" xsi:type="string">${ $.$data.rowIndex }</item>
+                        </item>
+                    </item>
                     <item name="controlVisibility" xsi:type="boolean">true</item>
                     <item name="storageConfig" xsi:type="array">
                         <item name="provider" xsi:type="string">

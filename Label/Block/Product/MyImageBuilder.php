@@ -8,7 +8,6 @@
 
 namespace MyModule\Label\Block\Product;
 
-use Magento\Catalog\Model\Product;
 use MyModule\Label\Model\Label;
 use Magento\Catalog\Block\Product\ImageBuilder;
 use Magento\Catalog\Block\Product\ImageFactory;
@@ -26,12 +25,10 @@ class MyImageBuilder extends ImageBuilder
      * @param HelperFactory $helperFactory
      * @param ImageFactory  $imageFactory
      * @param Label         $label
-     * @param Product       $product
      */
-    public function __construct(HelperFactory $helperFactory, ImageFactory $imageFactory, Label $label, Product $product)
+    public function __construct(HelperFactory $helperFactory, ImageFactory $imageFactory, Label $label)
     {
         $this->_label  = $label;
-        $this->product = $product;
         parent::__construct($helperFactory, $imageFactory);
     }
 
@@ -106,7 +103,6 @@ class MyImageBuilder extends ImageBuilder
             ->group('main_table.id');
         $collection->addFieldToFilter('pid', $simpleIds);
 
-//        die(var_dump($collection->toArray()['items']));
         return $collection->toArray()['items'];
     }
 }

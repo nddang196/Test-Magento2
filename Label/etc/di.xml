@@ -49,4 +49,5 @@
     <preference for="Magento\Catalog\Block\Product\Image" type="MyModule\Label\Block\Product\MyImage" />
     <preference for="Magento\Checkout\Block\Cart\Sidebar" type="MyModule\Label\Block\Cart\Sidebar" />
     <preference for="Magento\Catalog\Block\Product\View\Gallery" type="MyModule\Label\Block\Product\View\Gallery" />
+    <preference for="Magento\Checkout\Block\Onepage" type="MyModule\Label\Block\Checkout\Onepage" />
 </config>
